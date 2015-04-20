@@ -60,21 +60,50 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Sample Wiki</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
+                  <li>
+                    <a href="/about">About</a>
+                  </li>
+                  <li>
+                    <a href="#">Sample Wiki</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contact</a>
+                  </li>
+                <% if current_user %>
+                  <li>Hello <%= current_user.name %>!</li> 
+                  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to "Sign In", new_user_session_path %></li>
+                  <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                <% end %>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
+<!-- Flash Messages -->
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-danger">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <%= flash[:error] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button class="close" data-dismiss="alert" type="button">&times;</button>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div> <!-- End Flash Messages -->
+
 	<%= yield %>		
 
 <!-- Footer -->
