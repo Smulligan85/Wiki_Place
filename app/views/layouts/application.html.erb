@@ -80,12 +80,6 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-<!-- Flash Messages -->
-<div class="container">
   <% if flash[:notice] %>
     <div class="alert alert-success">
       <button class="close" data-dismiss="alert" type="button">&times;</button>
@@ -102,9 +96,14 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
-</div> <!-- End Flash Messages -->
+    </div><!-- /.container -->
+    </nav>
 
-	<%= yield %>		
+<div class="container">
+  <div class="row">
+<%= yield %>		
+</div>
+</div>
 
 <!-- Footer -->
 <footer>
