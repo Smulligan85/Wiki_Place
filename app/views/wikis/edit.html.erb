@@ -1,22 +1,18 @@
-<br>
-<br>
-<br>
-
 <h2>Edit Wiki</h2>
 
 <%= form_for @wiki do |f| %>
 
-  <div class="form-group">
+  <div class= "form-group">
     <%= f.label :title %><br />
     <%= f.text_field :title, autofocus: true, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class= "form-group">
     <%= f.label :body %><br />
     <%= f.text_area :body, rows: 8, class: 'form-control' %>
   </div>
 
-  <div class="actions">
+  <div class= "form-group">
     <%= f.submit "Submit", class: 'btn btn-success' %>
   </div>
 <% end %>

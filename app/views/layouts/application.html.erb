@@ -23,9 +23,8 @@
 				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 				<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
-
 </head>
+
 <body>
 	<!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -64,7 +63,11 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-  <% if flash[:notice] %>
+
+    </div><!-- /.container -->
+    </nav><!-- end navigation -->
+
+      <% if flash[:notice] %>
     <div class="alert alert-success">
       <button class="close" data-dismiss="alert" type="button">&times;</button>
       <%= flash[:notice] %>
@@ -80,11 +83,9 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
-    </div><!-- /.container -->
-    </nav><!-- end navigation -->
 
 
-	<%= yield %>
+<%= yield %>
 
 <!-- Footer -->
 <footer>
@@ -117,7 +118,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                <p class="copyright text-muted">Copyright &copy; Wiki Place 2015</p>
             </div>
         </div>
     </div>

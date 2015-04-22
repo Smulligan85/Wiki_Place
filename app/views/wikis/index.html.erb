@@ -1,4 +1,41 @@
-<h1>All Wikis</h1>
-<% @wikis.each do |post| %>
-  <p><%= link_to wiki.title, wiki %></p>
-<% end %>
+<body>
+<!-- Page Header
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Wiki Place</h1>
+                    <hr class="small">
+                    <span class="subheading">A Place For All Wikis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h1>All Wikis</h1>
+            <div class="post-preview">
+                <a href="post.html">
+                  <% @wikis.each do |wiki| %>
+                    <h2 class="post-title"><%= link_to wiki.title, wiki %></h2>
+                    <% end %>
+            </div>
+            <hr>
+            
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Wikis &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+</body>
