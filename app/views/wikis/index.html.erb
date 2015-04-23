@@ -23,9 +23,14 @@
                 <a href="post.html">
                   <% @wikis.each do |wiki| %>
                     <h2 class="post-title"><%= link_to wiki.title, wiki %></h2>
-                    <% end %>
+                  <% end %>
             </div>
             <hr>
+            <div>
+              <% if policy(Wiki.new).create? %>
+                <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+              <% end %>
+            </div>
             
             <!-- Pager -->
             <ul class="pager">
