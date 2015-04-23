@@ -65,12 +65,6 @@
                   <li>
                     <a href="/about">About</a>
                   </li>
-                  <li>
-                    <a href="#">Sample Wiki</a>
-                  </li>
-                  <li>
-                    <a href="/contact">Contact</a>
-                  </li>
                 <% if current_user %>
                   <li><%= link_to "Hello #{current_user.name}!", root_path %></li> 
                   <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
