@@ -6,18 +6,22 @@ class User < ActiveRecord::Base
   
 
   has_many :wikis, dependent: :destroy
-  after_initialize :standard?
+  # after_initialize :standard?
+
+  def admin!
+    role = 'admin'
+  end
 
   def admin?
     role == 'admin'
   end
 
-  def premium?
-    role == 'premium'
+  def premium!
+    role = 'premium'
   end
 
-  def standard?
-    role == 'standard'
+  def premium?
+    role == 'premium'
   end
 
 end
