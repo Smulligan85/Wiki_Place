@@ -15,8 +15,6 @@ class User < ActiveRecord::Base
     role == 'premium'
   end
 
-  private
-
   def standard?
     role == 'standard'
   end
