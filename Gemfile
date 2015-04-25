@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'devise'
 gem 'faker'
 gem 'pundit'
+gem 'figaro', '~> 1.1.0'
+gem 'stripe'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
