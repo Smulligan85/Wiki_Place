@@ -13,6 +13,7 @@ gem 'faker'
 gem 'pundit'
 gem 'figaro', '~> 1.1.0'
 gem 'stripe'
+gem 'redcarpet', '~> 3.2.3'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 

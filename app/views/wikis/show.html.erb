@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1><%= @wiki.title %></h1>
+                    <h1><%= markdown_to_html @wiki.title %></h1>
 <!--                     <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
                     <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span> -->
                 </div>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<p><%= @wiki.body %></p>
+<p><%= markdown_to_html @wiki.body %></p>
 <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-primary' %>
 <% if policy(@wiki).destroy? %>
 <%= link_to "Destroy Wiki", wiki_path(@wiki), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
