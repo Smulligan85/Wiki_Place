@@ -27,6 +27,10 @@
         <%= f.check_box :private %> Private wiki
       <% end %>
     </div>
+    <div class="form-group">
+      <%= f.label :collaborators %><br />
+      <%= f.text_field :collaborators, class: 'form-control' %>
+    </div>
   <% end %>
 
 

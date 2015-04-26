@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   
 
   has_many :wikis, dependent: :destroy
-  # after_initialize :standard?
-
+  belongs_to :wikis
+  
   def admin!
     role = 'admin'
   end
