@@ -11,6 +11,7 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    @users = User.all
     authorize @wiki
   end
 
@@ -28,6 +29,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.all
     authorize @wiki
   end
 
@@ -53,6 +55,7 @@ class WikisController < ApplicationController
       render :show
     end
   end
+
 
   private
 
