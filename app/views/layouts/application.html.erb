@@ -65,6 +65,12 @@
                   <li>
                     <a href="/about">About</a>
                   </li>
+                  <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search Wikis">
+                    </div>
+                    <button type="submit" class="btn btn-xs btn-primary">Search</button>
+                  </form>
                 <% if current_user %>
                   <li><%= link_to "Hello #{current_user.name}!", root_path %></li> 
                   <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
