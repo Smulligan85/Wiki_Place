@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   
 
   has_many :wikis, dependent: :destroy
-  belongs_to :wikis
   
   def admin!
     role = 'admin'
