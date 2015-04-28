@@ -5,6 +5,7 @@ class CreateWikis < ActiveRecord::Migration
       t.text :body
       t.boolean :private, default: false
       t.references :user, index: true
+      t.references :collaborator, index: true
 
       t.timestamps null: false
     end
