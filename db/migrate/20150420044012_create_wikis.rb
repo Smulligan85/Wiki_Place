@@ -9,5 +9,6 @@ class CreateWikis < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_foreign_key :wikis, :users
+    add_foreign_key :wikis, :collaborators
   end
 end
