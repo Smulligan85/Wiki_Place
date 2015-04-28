@@ -1,35 +1,51 @@
 <body>
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1><%= markdown_to_html @wiki.title %></h1>
-<!--                     <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                    <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span> -->
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1><%= markdown_to_html @wiki.title %></h1>
+                        <!--                     <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-
+    </header>
     <!-- Post Content -->
     <article>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-<p><%= markdown_to_html @wiki.body %></p>
-<%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-primary' %>
-<% if policy(@wiki).destroy? %>
-<%= link_to "Destroy Wiki", wiki_path(@wiki), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
-<% end %>
-
- </div>
-            <hr>
+                    <p><%= markdown_to_html @wiki.body %></p>
+                    <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-primary' %>
+                    <% if policy(@wiki).destroy? %>
+                    <%= link_to "Destroy Wiki", wiki_path(@wiki), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+                    <% end %>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</article>
+    </article>
+    <%= form_tag manage_wiki_collaborations_path(@wiki) do %>
+        <%= hidden_field_tag '[user_ids][]', [nil] %>
+        <table class="table table-striped" style="width:60%">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Collaborator?</th>
+              </tr>
+            </thead>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.name || 'No name!' %></td>
+                    <td><%= user.email %></td>
+                    <td><%= check_box_tag '[user_ids][]', user.id, @wiki.users.include?(user) %></td>
+                </tr>
+            <% end %>
+        </table>
+        <%= submit_tag %>
+    <% end %>
 </body>
