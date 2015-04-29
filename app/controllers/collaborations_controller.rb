@@ -10,6 +10,4 @@ def manage
     redirect_to @wiki
   end 
 end
-
-  
 end
