@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   
 
   has_many :wikis, dependent: :destroy
+  has_many :collaborations
+  has_many :shared_wikis, through: :collaborations, source: :wiki
   
   def admin!
     role = 'admin'
