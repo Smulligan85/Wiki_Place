@@ -38,7 +38,7 @@
 <% end %>
 
   <% @users.each do |user| %> 
-  <%= form_for [@wiki, @wiki.collaborators.build] do |f| %>
+  <%= form_for [@wiki, @wiki.collaborations.build] do |f| %>
   <% if user != current_user %>
   <div class="form-group">
 
