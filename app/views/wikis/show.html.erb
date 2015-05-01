@@ -27,7 +27,7 @@
         </div>
     </article>
     <%= form_tag manage_wiki_collaborations_path(@wiki) do %>
-        <%= hidden_field_tag '[user_ids][]', [g] %>
+        <%= hidden_field_tag '[user_ids][]', [] %>
         <table class="table table-striped" style="width:60%">
             <thead>
               <tr>
