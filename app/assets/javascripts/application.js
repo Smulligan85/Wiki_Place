@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
+function myFunction(){
+  document.getElementById('#wiki-body').innerHTML = marked('#wiki-review');
+}
