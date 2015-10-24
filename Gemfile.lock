@@ -37,15 +37,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.0.3)
-      execjs
-      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
     capybara (2.5.0)
@@ -75,6 +69,11 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faker (1.5.0)
       i18n (~> 0.5)
     figaro (1.1.1)
@@ -221,11 +220,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3, >= 3.3.5.1)
   byebug
   capybara (~> 2.5)
   coffee-rails (~> 4.1.0)
   devise
+  factory_girl_rails (~> 4.5.0)
   faker
   figaro (~> 1.1.0)
   jbuilder (~> 2.0)
