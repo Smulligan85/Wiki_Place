@@ -20,7 +20,6 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <h1>All Wikis</h1>
             <div class="post-preview">
-                <a href="post.html">
                   <% @wikis.each do |wiki| %>
                     <h2 class="post-title"><%= link_to (markdown_to_html wiki.title), wiki %></h2>
                   <% end %>
